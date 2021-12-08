@@ -38,7 +38,7 @@ namespace WindowsFormsApp3_RSA
         }
 
         /// <summary>
-        /// Евклид
+        /// Нахождение НОД алгоритм Евклида
         /// </summary>
         /// <param name="num1"></param>
         /// <param name="num2"></param>
@@ -60,11 +60,10 @@ namespace WindowsFormsApp3_RSA
             return num1 | num2;
         }
 
-
-
         private void gen_keys(int p, int q)
         {
             int e, d = 0;
+
             if (string.IsNullOrEmpty(textBoxE.Text))
             {
                 var lst = get_primes(300);
@@ -74,9 +73,6 @@ namespace WindowsFormsApp3_RSA
             {
                 e = int.Parse(textBoxE.Text);
             }
-
-
-
 
             int n = p * q;
             int phi = (p - 1) * (q - 1);
@@ -104,8 +100,6 @@ namespace WindowsFormsApp3_RSA
             textBoxD.Text = string.Format("{0}", d);
             textBoxE.Text = string.Format("{0}", e);
             textBoxN.Text = string.Format("{0}", n);
-
-
 
         }
 
@@ -154,7 +148,6 @@ namespace WindowsFormsApp3_RSA
         private void textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            //лочим строку только для цифр и <-
             if (!char.IsDigit(number) && number != 8)
             {
                 e.Handled = true;
