@@ -21,7 +21,7 @@ namespace WindowsFormsApp3_RSA
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (string.IsNullOrEmpty(textBoxP.Text) && !string.IsNullOrEmpty(textBoxQ.Text) && !string.IsNullOrEmpty(textBoxMsgEncript.Text))
+            if (!string.IsNullOrEmpty(textBoxP.Text) && !string.IsNullOrEmpty(textBoxQ.Text) && !string.IsNullOrEmpty(textBoxMsgEncript.Text))
             {
                 var p = int.Parse(textBoxP.Text);
                 var q = int.Parse(textBoxQ.Text);
